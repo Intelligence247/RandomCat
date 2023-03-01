@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*{
+    @apply m-0 p-0 box-border
+}
+.body{
+    @apply w-screen h-screen grid place-items-center bg-black bg-[url(/media/ohdeer.jpg)] bg-[cover] bg-[center] bg-[fixed]
+}
+section{
+    @apply w-[35rem] h-[35rem] bg-red-500 rounded-[10px] border-[green] border-[2px]
+}
+img{
+    @apply w-full h-full rounded-[10px] 
+}
+button{
+    @apply text-white bg-teal-800 w-max m-auto block px-4 py-2 mt-6 rounded-full 
+}
