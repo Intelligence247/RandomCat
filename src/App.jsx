@@ -9,13 +9,15 @@ function App() {
    const url= 'https://aws.random.cat/meow'
 
  const fetchCats=()=>{
- axios.get(url).then((res)=> setCat(res.data.file)).catch((err)=>console.log(err))
+    axios.get(url).then((res)=> setCat(res.data.file)).catch((err)=>console.log(err))
  }
 
    useEffect(() => {
    fetchCats()
    }, [])
-
+   const handlefetch=()=>{
+    fetchCats()
+   }
   return (
     <div className="body">
 
@@ -23,11 +25,11 @@ function App() {
 <section className=''>
   {
 
-  cat.length===0? <Loading/>:<img src={cat} alt=""/>
+  cat.length==0? <Loading/>:<img src={cat} alt=""/>
 
   }
       </section>
-      <button onClick={()=>fetchCats()}>Click to Generate a new Cat</button>
+      <button onClick={handlefetch}>Click to Generate a new Cat</button>
 
       </main>
     </div>
